@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bancos de Dados: Do Zero ao Essencial</title>
+    <link rel="stylesheet" href="CSS/introducao.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Fira+Code:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="#" class="nav-brand">DB Essencial</a>
+            <ul class="nav-menu">
+                <li><a href="#o-que-e" class="nav-link">O que é DB?</a></li>
+                <li><a href="#conceitos-chave" class="nav-link">MYsql e SQL</a></li>
+                <li><a href="#tipos-bd" class="nav-link">Banco de dados e Não relacional</a></li>
+                <li><a href="#vantagens-desvantagens" class="nav-link">Prós & Contras</a></li>
+                <li><a href="#exemplo-sql" class="nav-link">SQL</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <header class="hero">
+        <div class="hero-content reveal">
+            <h1><i class="fas fa-database"></i> Bancos de Dados: A Base da Era Digital</h1>
+            <p class="subtitle">Desvendando os segredos do armazenamento e gestão de dados.</p>
+            <a href="#o-que-e" class="btn-primary">Explorar Agora <i class="fas fa-arrow-down"></i></a>
+        </div>
+    </header>
+
+    <main class="container">
+        <section id="o-que-e" class="feature-box reveal">
+            <h2><i class="fas fa-question-circle icon-heading"></i> O que é um Banco de Dados?</h2>
+            <p>Um **Banco de Dados (DB)** é um sistema organizado para armazenar, gerenciar e recuperar grandes volumes de dados de forma eficiente e segura. Pense nele como uma biblioteca digital extremamente bem organizada, onde cada "livro" (dado) pode ser encontrado rapidamente e está sempre em seu devido lugar.</p>
+            <p>Ele serve como o coração de qualquer aplicação moderna, desde sistemas bancários até redes sociais, garantindo que as informações estejam sempre disponíveis e consistentes.</p>
+        </section>
+
+        <section id="conceitos-chave" class="reveal">
+            <h2><i class="fas fa-lightbulb icon-heading"></i> Fundamentos Essenciais</h2>
+            <div class="grid-cards">
+                <div class="card concept-card">
+                    <h3><i class="fas fa-cogs icon-card"></i> SGBD (DBMS)</h3>
+                    <p>O **Sistema de Gerenciamento de Banco de Dados** é o software que permite a interação com o DB. Ele atua como um intermediário, processando requisições, garantindo a segurança e mantendo a integridade dos dados.</p>
+                    <span class="tag">Ex: MySQL, PostgreSQL, Oracle, MongoDB</span>
+                </div>
+                <div class="card concept-card">
+                    <h3><i class="fas fa-code icon-card"></i> SQL</h3>
+                    <p>A **Structured Query Language** é a linguagem padrão para interagir com bancos de dados relacionais. É usada para criar, consultar, atualizar e deletar dados (operações CRUD).</p>
+                    <span class="tag">SELECT, INSERT, UPDATE, DELETE</span>
+                </div>
+                <div class="card concept-card">
+                    <h3><i class="fas fa-table icon-card"></i> Modelo Relacional</h3>
+                    <p>Organiza dados em **tabelas** interligadas, onde cada tabela tem **linhas** (registros) e **colunas** (atributos). As relações entre tabelas garantem a integridade e evitam redundância.</p>
+                    <span class="tag">Tabelas, Linhas, Colunas, Chaves</span>
+                </div>
+            </div>
+        </section>
+
+        <section id="tipos-bd" class="reveal">
+            <h2><i class="fas fa-sitemap icon-heading"></i> Tipos de Bancos de Dados</h2>
+            <div class="bd-types-layout">
+                <div class="type-relacional">
+                    <h3><i class="fas fa-project-diagram icon-type"></i> Relacionais (SQL)</h3>
+                    <p>Baseados no modelo relacional, com estrutura de tabelas rígida. Garantem alta consistência.</p>
+                    <ul>
+                        <li><i class="fas fa-check-circle"></i> Ideal para dados estruturados.</li>
+                        <li><i class="fas fa-check-circle"></i> Transações ACID (Atomicidade, Consistência, Isolamento, Durabilidade).</li>
+                        <li><i class="fas fa-check-circle"></i> Exemplos: MySQL, PostgreSQL, SQL Server.</li>
+                    </ul>
+                </div>
+                <div class="type-nosql">
+                    <h3><i class="fas fa-cube icon-type"></i> Não Relacionais (NoSQL)</h3>
+                    <p>Modelos flexíveis, não usam tabelas e são escaláveis horizontalmente. Para Big Data e dados não estruturados.</p>
+                    <ul>
+                        <li><i class="fas fa-check-circle"></i> Ótimo para dados não/semi-estruturados.</li>
+                        <li><i class="fas fa-check-circle"></i> Alta escalabilidade e performance.</li>
+                        <li><i class="fas fa-check-circle"></i> Exemplos: MongoDB (Documento), Redis (Chave-Valor).</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section id="vantagens-desvantagens" class="reveal">
+            <h2><i class="fas fa-balance-scale icon-heading"></i> Vantagens e Desvantagens</h2>
+            <div class="pros-cons-grid">
+                <div class="pros">
+                    <h3><i class="fas fa-plus-circle icon-pros"></i> Vantagens</h3>
+                    <ul>
+                        <li><i class="fas fa-arrow-circle-right"></i> **Organização e Acesso Fácil:** Dados estruturados e facilmente recuperáveis.</li>
+                        <li><i class="fas fa-arrow-circle-right"></i> **Segurança:** Controle de acesso robusto, backups e recuperação de desastres.</li>
+                        <li><i class="fas fa-arrow-circle-right"></i> **Consistência:** Garante que os dados sejam precisos e válidos.</li>
+                        <li><i class="fas fa-arrow-circle-right"></i> **Compartilhamento:** Múltiplos usuários e aplicações podem acessar os mesmos dados.</li>
+                        <li><i class="fas fa-arrow-circle-right"></i> **Redução de Redundância:** Evita duplicação de informações, otimizando espaço.</li>
+                    </ul>
+                </div>
+                <div class="cons">
+                    <h3><i class="fas fa-minus-circle icon-cons"></i> Desvantagens</h3>
+                    <ul>
+                        <li><i class="fas fa-times-circle"></i> **Custo:** SGBDs robustos podem ser caros (software, hardware, licenças).</li>
+                        <li><i class="fas fa-times-circle"></i> **Complexidade:** Gerenciar e otimizar um DB exige conhecimento especializado.</li>
+                        <li><i class="fas fa-times-circle"></i> **Vulnerabilidades:** Pontos de falha potenciais se não for bem configurado/protegido.</li>
+                        <li><i class="fas fa-times-circle"></i> **Manutenção:** Necessidade de backup, updates, otimização constante.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section id="exemplo-sql" class="reveal">
+            <h2><code class="code-title"><i class="fas fa-terminal"></i> Exemplo Prático de SQL</code></h2>
+            <p>Imagine que você tem uma tabela de produtos e quer encontrar todos os produtos com preço acima de R$50 que ainda estão em estoque:</p>
+            <pre><code class="language-sql">-- Seleciona o nome e o preço dos produtos
+SELECT nome_produto, preco
+FROM Produtos
+WHERE preco > 50.00
+  AND quantidade_estoque > 0
+ORDER BY preco DESC; -- Ordena do mais caro para o mais barato
+            </code></pre>
+            <p class="code-explanation"><i class="fas fa-info-circle"></i> Este comando recupera informações específicas de forma eficiente, filtrando e ordenando os resultados.</p>
+        </section>
+    </main>
+
+    <footer>
+        <p>Desenvolvido com <i class="fas fa-heart"></i> para [MARCOS] | Trabalho Do TRIO</p>
+        <p class="data">Última atualização: <span id="current-date"></span></p>
+    </footer>
+
+    <script>
+        // Script para a data atual no rodapé
+        document.getElementById('current-date').textContent = new Date().toLocaleDateString('pt-BR');
+
+        // Script para o efeito de "Scroll Reveal"
+        const revealElements = document.querySelectorAll('.reveal');
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                } else {
+                    // Opcional: remover a classe 'active' quando sai da tela
+                    // entry.target.classList.remove('active');
+                }
+            });
+        }, {
+            threshold: 0.15 // Inicia a animação quando 15% do elemento está visível
+        });
+
+        revealElements.forEach(el => observer.observe(el));
+
+        // Script para rolagem suave na navegação
+        document.querySelectorAll('.nav-link, .btn-primary').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+</html>

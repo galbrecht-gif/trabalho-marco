@@ -1,0 +1,249 @@
+/* Paleta de Cores e Variáveis */
+:root {
+    --primary-color: #2c3e50;    /* Azul petróleo escuro */
+    --accent-color: #3498db;     /* Azul vibrante */
+    --secondary-accent: #2ecc71; /* Verde esmeralda (para sucesso/prós) */
+    --danger-color: #e74c3c;     /* Vermelho (para desvantagens/erros) */
+    --background-light: #ecf0f1; /* Cinza claro suave */
+    --text-dark: #34495e;        /* Cinza escuro */
+    --text-light: #fdfefe;
+    --card-bg: #ffffff;
+    --code-bg: #2d2d2d;          /* Fundo de código escuro */
+    --gradient-start: #3498db;
+    --gradient-end: #2980b9;
+}
+
+/* Base Styles */
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: var(--background-light);
+    color: var(--text-dark);
+    line-height: 1.7;
+    scroll-behavior: smooth; /* Rolagem suave global */
+}
+
+/* Utilidades de Ícones */
+.icon-heading { margin-right: 10px; color: var(--accent-color); }
+.icon-card { margin-right: 8px; color: var(--accent-color); }
+.icon-type { margin-right: 8px; font-size: 1.1em; }
+.icon-pros { margin-right: 8px; color: var(--secondary-accent); }
+.icon-cons { margin-right: 8px; color: var(--danger-color); }
+
+
+/* Navbar */
+.navbar {
+    background-color: var(--primary-color);
+    padding: 15px 0;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2);
+    position: sticky; /* Fica fixo ao rolar */
+    top: 0;
+    z-index: 1000;
+}
+
+.nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+}
+
+.nav-brand {
+    color: var(--text-light);
+    font-size: 1.8em;
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.nav-menu {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+.nav-menu li {
+    margin-left: 30px;
+}
+
+.nav-link {
+    color: var(--text-light);
+    text-decoration: none;
+    font-weight: 400;
+    font-size: 1.05em;
+    transition: color 0.3s ease, border-bottom 0.3s ease;
+    padding-bottom: 3px;
+    border-bottom: 2px solid transparent;
+}
+
+.nav-link:hover {
+    color: var(--accent-color);
+    border-bottom-color: var(--accent-color);
+}
+
+/* Hero Section */
+.hero {
+    background: linear-gradient(135deg, var(--gradient-start), var(--gradient-end));
+    color: var(--text-light);
+    padding: 100px 0;
+    text-align: center;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+    margin-bottom: 40px;
+    position: relative; /* Para o efeito reveal */
+}
+
+.hero-content {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.hero h1 {
+    font-size: 3.8em;
+    font-weight: 700;
+    margin-bottom: 10px;
+    line-height: 1.2;
+}
+
+.hero .subtitle {
+    font-weight: 300;
+    font-size: 1.4em;
+    opacity: 0.9;
+    margin-bottom: 30px;
+}
+
+.btn-primary {
+    display: inline-block;
+    background-color: var(--secondary-accent);
+    color: var(--text-light);
+    padding: 15px 30px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-size: 1.1em;
+    font-weight: 600;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.btn-primary:hover {
+    background-color: #27ae60;
+    transform: translateY(-3px);
+}
+
+/* Main Container */
+.container {
+    max-width: 1200px;
+    margin: 30px auto;
+    padding: 0 20px;
+}
+
+/* Seções Gerais */
+section {
+    background-color: var(--card-bg);
+    padding: 40px;
+    margin-bottom: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    transition: transform 0.5s ease-out, opacity 0.5s ease-out; /* Para reveal */
+    transform: translateY(20px); /* Posição inicial para o reveal */
+    opacity: 0; /* Invisível inicialmente para o reveal */
+}
+
+section.active { /* Classe adicionada por JS para o reveal */
+    transform: translateY(0);
+    opacity: 1;
+}
+
+h2 {
+    color: var(--primary-color);
+    font-weight: 700;
+    font-size: 2.5em;
+    border-bottom: 3px solid var(--accent-color);
+    padding-bottom: 15px;
+    margin-top: 0;
+    margin-bottom: 30px;
+    display: flex;
+    align-items: center;
+}
+
+/* Feature Box (para "O que é") */
+.feature-box {
+    border-left: 6px solid var(--secondary-accent);
+}
+.feature-box p {
+    font-size: 1.1em;
+}
+
+/* Cards de Conceito (Grid) */
+.grid-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 25px;
+    margin-top: 25px;
+}
+
+.concept-card {
+    background-color: var(--card-bg);
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border-top: 4px solid var(--accent-color);
+}
+
+.concept-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+.concept-card h3 {
+    color: var(--primary-color);
+    margin-top: 0;
+    font-size: 1.5em;
+    margin-bottom: 15px;
+}
+
+.tag {
+    display: inline-block;
+    background-color: var(--accent-color);
+    color: var(--text-light);
+    font-size: 0.85em;
+    padding: 6px 12px;
+    border-radius: 20px;
+    margin-top: 15px;
+    font-family: 'Fira Code', monospace;
+    font-weight: 400;
+    letter-spacing: 0.5px;
+}
+
+/* Tipos de BD (Flexbox) */
+.bd-types-layout {
+    display: flex;
+    gap: 30px;
+    margin-top: 30px;
+    flex-wrap: wrap; /* Quebra de linha em telas pequenas */
+}
+
+.type-relacional, .type-nosql {
+    flex: 1;
+    min-width: 300px; /* Garante que não fiquem muito estreitos */
+    background-color: var(--card-bg);
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+    border-bottom: 5px solid;
+}
+
+.type-relacional { border-color: var(--accent-color); }
+.type-nosql { border-color: var(--secondary-accent); }
+
+.type-relacional h3, .type-nosql h3 {
+    color: var(--primary-color);
+    font-size: 1.8em;
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
